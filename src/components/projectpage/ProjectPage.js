@@ -8,7 +8,8 @@ import "./ProjectPage.css"
 // const abi = contract.abi;
 
 function ProjectPage() {
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  var balance2 = new String("");
 
   const [currentAccount, setCurrentAccount] = useState(null);
 
@@ -84,8 +85,8 @@ function ProjectPage() {
   }
 
   const fund = async () => {
-    // const ethAmount = document.getElementById("ethAmount").value
-    const ethAmount = "0.01";
+    const ethAmount = document.getElementById("ethAmount").value
+    // const ethAmount = "0.01";
     console.log(`Funding with ${ethAmount}...`)
     if (typeof window.ethereum !== "undefined") {
       const provider = new ethers.providers.Web3Provider(window.ethereum)
@@ -127,12 +128,14 @@ function ProjectPage() {
       try {
         const balance = await provider.getBalance(contractAddress)
         console.log(ethers.utils.formatEther(balance))
+        balance2 = ethers.utils.formatEther(balance);
       } catch (error) {
         console.log(error)
       }
     } else {
       console.log("Please install MetaMask")
     }
+    document.getElementById("eth").innerHTML = balance2+ "eth"; 
   }
 
 
@@ -266,8 +269,9 @@ function ProjectPage() {
                   paddingLeft: ".5rem",
                   color: "green",
                 }}
+                id ="eth"
               >
-                5000 eth
+               X eth
               </h1>
               <p
                 style={{
@@ -344,13 +348,14 @@ function ProjectPage() {
                   paddingLeft: ".5rem",
                   borderWidth: "2px",
                 }}
+                id ="ethAmount"
               />
               <div
                 style={{
                   margin: ".25rem",
                 }}
               >
-                eth
+               eth
               </div>
             </div>
 
@@ -375,6 +380,7 @@ function ProjectPage() {
                 Fund this Project
               </button>
             </div>
+
             <div
               style={{
                 width: "33.33%",
@@ -396,15 +402,54 @@ function ProjectPage() {
               >
                 Connect wallet
               </button>
-              <button onClick={withdraw} className='button3'>
+      </div>
+
+
+      <div
+              style={{
+                width: "33.33%",
+                height: "2.25rem",
+                marginTop: "0.75rem",
+                marginBottom: "0.75rem",
+                backgroundColor: "lightgray",
+              }}
+            >
+              <button 
+                style={{
+                  width: "100%",
+                  height: "2.25rem",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              onClick={withdraw}>
            Withdraw
         </button>
       </div>
-       <div>
-         <button onClick={getBalance} className='button2'>
-           See Balance
-         </button>
-            </div>
+
+
+
+      <div
+              style={{
+                width: "33.33%",
+                height: "2.25rem",
+                marginTop: "0.75rem",
+                marginBottom: "0.75rem",
+                backgroundColor: "lightgray",
+              }}
+            >
+              <button 
+                style={{
+                  width: "100%",
+                  height: "2.25rem",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+                onClick={getBalance}>
+           See Progress
+        </button>
+      </div>
+
+
             <div
               style={{
                 marginTop: "0.75rem",
