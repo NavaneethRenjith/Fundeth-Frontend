@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 // import contract from './contracts/NFTCollectible.json';
 import { ethers } from 'ethers';
 import { abi, contractAddress } from "./constants.js"
+import "./ProjectPage.css"
 
 // const contractAddress = "0x355638a4eCcb777794257f22f50c289d4189F245";
 // const abi = contract.abi;
 
 function ProjectPage() {
+  <script src="https://cdn.tailwindcss.com"></script>
 
   const [currentAccount, setCurrentAccount] = useState(null);
 
@@ -147,27 +149,311 @@ function ProjectPage() {
   }, [])
 
   return (
-    <div className='main-app'>
-      <h1>Welcome to xyz project</h1>
+    // <div className='main-app'>
+    //   <h1>Welcome to xyz project</h1>
+    //   <div>
+    //     {connectWalletButton()}
+    //   </div>
+    //   <div>
+    //     <button onClick={fund} className='button2'>
+    //       Fund
+    //     </button>
+    //   </div>
+    //   <div>
+    //     <button onClick={withdraw} className='button3'>
+    //       Withdraw
+    //     </button>
+    //   </div>
+    //   <div>
+    //     <button onClick={getBalance} className='button2'>
+    //       See Balance
+    //     </button>
+    //   </div>
+    // </div>
+    <>
+    <div style={{ marginBottom: "3 rem", backgroundColor: "white" }}>
       <div>
-        {connectWalletButton()}
+        <div
+          style={{
+            marginLeft: "auto",
+            marginRight: "auto",
+            margin: "0.75rem",
+          }}
+        >
+          <h1
+            style={{
+              fontSize: "1.875rem",
+              textAlign: "center",
+              padding: "0.75rem",
+            }}
+          >
+            Project Title
+          </h1>
+          <p
+            style={{
+              width: "100%",
+              marginLeft: "auto",
+              marginRight: "auto",
+              textAlign: "center",
+              color: "black",
+            }}
+          >
+            dkfjlkadjsfk dkfjlasjdf kjsdffkjadjsflkjaksdfflkdfas
+            dfioqweruopqweri oewqiruqwieo qweiouroiqu
+            roiquewoiruqoiweruoiqewrru qwoieuroiqewruoikdsflkjslkdfjl;asdjf
+            f;aksfdjlsjdfk
+            asdjflksajflkajsffl;khasoifkjasperroikjasddo;aisfjkaso;iu
+            ddjkas;ifduwjeo;iu asflkasf;ilasfduj
+          </p>
+        </div>
       </div>
-      <div>
-        <button onClick={fund} className='button2'>
-          Fund
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+
+          marginBottom: "2rem",
+        }}
+      >
+        <div
+          style={{
+            width: "66.666%",
+            margin: ".075rem",
+            paddingLeft: "3rem",
+          }}
+        >
+          <img
+            style={{ maxHeight: "100%", width: "100%" }}
+            src="https://ksr-ugc.imgix.net/assets/037/852/942/0d313cc981d61e25066c46ee693779a4_original.jpg?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1656976124&auto=format&frame=1&q=92&s=c393fc344af09cff82607f40b28dd7df"
+            alt="dicegame"
+          />
+        </div>
+        <div
+          style={{
+            width: "33%",
+            padding: "1rem",
+          }}
+        >
+          <div
+            style={{
+              width: "100",
+              backgroundColor: "grey",
+              height: "1.25rem",
+              marginBottom: "1.5rem",
+            }}
+          >
+            <div
+              style={{
+                width: "45%",
+                backgroundColor: "blue",
+                height: "1.25rem",
+              }}
+            ></div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <div style={{ padding: "0.25 rem" }}>
+              <h1
+                style={{
+                  fontSize: "1.875rem",
+                  lineHeight: "2.25rem",
+                  padding: ".5 rem",
+                  paddingLeft: ".5rem",
+                  color: "green",
+                }}
+              >
+                5000 eth
+              </h1>
+              <p
+                style={{
+                  color: "grey",
+                  paddingLeft: ".5rem",
+                  paddingBottom: ".5rem",
+                }}
+              >
+                pledged of etherium 6000 goal
+              </p>
+            </div>
+            <div style={{ padding: ".5 rem" }}>
+              <h1
+                className="text-2xl p-1 text-black-300"
+                style={{
+                  fontSize: "1.5rem",
+                  lineHeight: "2rem",
+                  padding: ".5 rem",
+                  paddingLeft: ".5rem",
+
+                  color: "black",
+                }}
+              >
+                1000
+              </h1>
+              <p
+                style={{
+                  color: "grey",
+                  paddingLeft: ".5rem",
+                  paddingBottom: ".5rem",
+                }}
+              >
+                backers
+              </p>
+            </div>
+            <div style={{ padding: "0.5rem" }}>
+              <h1
+                style={{
+                  fontSize: "1.5rem",
+                  lineHeight: "2rem",
+                  paddingLeft: ".25rem",
+
+                  color: "black",
+                }}
+              >
+                12
+              </h1>
+              <p
+                style={{
+                  color: "black",
+                  paddingLeft: ".25rem",
+                  paddingBottom: ".5rem",
+                }}
+              >
+                days to go
+              </p>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                paddingTop: "1.25 rem",
+                paddingLeft: ".25rem",
+                paddingBottom: ".5rem",
+
+              }}
+            >
+              <input
+                type="text"
+                placeholder="Enter the amount"
+                className="w-15 border-2"
+                style={{
+                  width: "10rem",
+                  paddingLeft: ".5rem",
+                  borderWidth: "2px",
+                }}
+              />
+              <div
+                style={{
+                  margin: ".25rem",
+                }}
+              >
+                eth
+              </div>
+            </div>
+
+            <div
+              style={{
+                height: "3rem",
+                width: "100%",
+                marginBottom: ".75rem",
+                marginTop: "0.75rem",
+                backgroundColor: "rgba(16,189,125,1)",
+              }}
+            >
+              <button
+                style={{
+                  width: "100%",
+                  height: "3rem",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+                type="button" onClick={fund}
+              >
+                Fund this Project
+              </button>
+            </div>
+            <div
+              style={{
+                width: "33.33%",
+                height: "2.25rem",
+                marginTop: "0.75rem",
+                marginBottom: "0.75rem",
+                backgroundColor: "lightgray",
+              }}
+            >
+              <button
+                type="button"
+                style={{
+                  width: "100%",
+                  height: "2.25rem",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+                onClick = {connectWalletHandler}
+              >
+                Connect wallet
+              </button>
+              <button onClick={withdraw} className='button3'>
+           Withdraw
         </button>
       </div>
-      <div>
-        <button onClick={withdraw} className='button3'>
-          Withdraw
-        </button>
-      </div>
-      <div>
-        <button onClick={getBalance} className='button2'>
-          See Balance
-        </button>
+       <div>
+         <button onClick={getBalance} className='button2'>
+           See Balance
+         </button>
+            </div>
+            <div
+              style={{
+                marginTop: "0.75rem",
+              }}
+            >
+              <p
+                style={{
+                  fontsize: "0.875rem",
+                  lineHeight: "1.25rem",
+                }}
+              >
+                <u>All or nothing</u> 
+                <br/>
+                This project will only be funded if it
+                reached the goal by August 30
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+        gap: "1rem",
+        placeItems: "center",
+        backgroundColor: "lightgray",
+        paddding: "1.5rem",
+        marginBottom: "1.5rem",
+        textAlign: "start",
+      }}
+    >
+      <div>
+        <li> Fundeth connects creators with backers to fund projects</li>
+      </div>
+      <div>
+        <li>
+          Rewards aren't guaranteeed but creators must regularly update backers
+        </li>
+      </div>
+      <div>
+        <li>
+          You're only charged if the project meets its funding goal by the
+          campaign deadline
+        </li>
+      </div>
+    </div>
+  </>
   )
 }
 

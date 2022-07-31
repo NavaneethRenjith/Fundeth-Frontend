@@ -60,7 +60,7 @@ export default () => {
   const navLinks = [
     <NavLinks key={1}>
       <NavLink href="#">
-        How it works
+        Create a project
       </NavLink>
       <NavLink>
         <Link to ="/projects">
@@ -72,6 +72,9 @@ export default () => {
       </NavLink>
       <NavLink href="#">
         Support
+      </NavLink>
+      <NavLink href="#">
+        How it works
       </NavLink>
     </NavLinks>,
     <NavLinks key={2}>

@@ -1,4 +1,5 @@
 module.exports = {
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   prefix: '',
   important: false,
   separator: ':',
