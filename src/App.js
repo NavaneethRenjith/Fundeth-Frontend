@@ -85,7 +85,10 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 /* Ready Made Pages (from demos folder) */
 // import EventLandingPage from "demos/EventLandingPage.js";
 // import HotelTravelLandingPage from "demos/HotelTravelLandingPage.js";
- import ProjectPage from "components/projectpage/ProjectPage.js";
+ import ProjectPage from "components/projectpage/ProjectPage1.js";
+ import ProjectPage2 from "components/projectpage/ProjectPage2.js";
+
+ import CreateProject from "components/createproject/CreateProject.js";
  import AgencyLandingPage from "demos/AgencyLandingPage.js";
 // import SaaSProductLandingPage from "demos/SaaSProductLandingPage.js";
 // import RestaurantLandingPage from "demos/RestaurantLandingPage.js";
@@ -129,9 +132,18 @@ export default function App() {
           <Portfolio/>
         </Route>
 
-        <Route path="/projectpage">
+        <Route path="/projectpage1">
           <ProjectPage />
         </Route>
+
+        <Route path="/projectpage2">
+          <ProjectPage2 />
+        </Route>
+
+        
+        {/* <Route path="/createproject">
+          <CreateProject />
+        </Route> */}
 
         <Route path="/">
           <AgencyLandingPage />

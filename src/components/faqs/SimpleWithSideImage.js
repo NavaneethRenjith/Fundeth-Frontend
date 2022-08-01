@@ -54,7 +54,7 @@ export default ({
     {
       question: "What technology is this platform based on ?",
       answer:
-        "Decentrafund works with etherum smart contracts under the hood."
+        "Fundeth works with etherum smart contracts under the hood."
     },
     {
       question: "What happens if a project doesn't reach funding by it's deadline?",

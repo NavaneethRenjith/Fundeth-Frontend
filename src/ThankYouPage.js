@@ -47,7 +47,7 @@ export default () => {
           <NavRow>
             <LogoLink href="/">
               <img src={logo} alt="" />
-              Decentrafund
+              Fundeth
             </LogoLink>
             <div tw="flex flex-col lg:flex-row items-center">
               <NavLink target="_blank" href="https://owaiskhan.me/post/free-tailwindcss-react-ui-kit">

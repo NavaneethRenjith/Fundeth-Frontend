@@ -2,15 +2,29 @@ import { useEffect, useState } from 'react';
 // import contract from './contracts/NFTCollectible.json';
 import { ethers } from 'ethers';
 import { abi, contractAddress } from "./constants.js"
-import "./ProjectPage.css"
+import ProgressBar from "@ramonak/react-progress-bar";
+import axios from "axios";
+import React from "react";
+
+const baseURL = "http://localhost:3001/projects/62e65f29a36006bba36c5b92";
 
 // const contractAddress = "0x355638a4eCcb777794257f22f50c289d4189F245";
 // const abi = contract.abi;
 
 function ProjectPage() {
+  const [details, setDetails] = useState([{title:"Loading..",content:"Loading..",goal:"Loading..",days:"Loading..",url:""}]);
+  
+  var balance2 = new String("100");
 
-  var balance2 = new String("");
 
+    React.useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      // console.log(details)
+      setDetails(response.data);
+    });
+  }, []);
+
+  
   const [currentAccount, setCurrentAccount] = useState(null);
 
   const checkWalletIsConnected = async () => {
@@ -174,6 +188,7 @@ function ProjectPage() {
     //   </div>
     // </div>
     <>
+
     <div style={{ marginBottom: "3 rem", backgroundColor: "white" }}>
       <div>
         <div
@@ -185,15 +200,16 @@ function ProjectPage() {
         >
           <h1
             style={{
-              fontSize: "1.875rem",
+              fontSize: "3rem",
               textAlign: "center",
               padding: "0.75rem",
             }}
           >
-            Project Title
+           {details[0].title}
           </h1>
           <p
             style={{
+              fontSize: "1.5rem",
               width: "100%",
               marginLeft: "auto",
               marginRight: "auto",
@@ -201,12 +217,7 @@ function ProjectPage() {
               color: "black",
             }}
           >
-            dkfjlkadjsfk dkfjlasjdf kjsdffkjadjsflkjaksdfflkdfas
-            dfioqweruopqweri oewqiruqwieo qweiouroiqu
-            roiquewoiruqoiweruoiqewrru qwoieuroiqewruoikdsflkjslkdfjl;asdjf
-            f;aksfdjlsjdfk
-            asdjflksajflkajsffl;khasoifkjasperroikjasddo;aisfjkaso;iu
-            ddjkas;ifduwjeo;iu asflkasf;ilasfduj
+            {details[0].content}
           </p>
         </div>
       </div>
@@ -228,7 +239,7 @@ function ProjectPage() {
         >
           <img
             style={{ maxHeight: "100%", width: "100%" }}
-            src="https://ksr-ugc.imgix.net/assets/037/852/942/0d313cc981d61e25066c46ee693779a4_original.jpg?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1656976124&auto=format&frame=1&q=92&s=c393fc344af09cff82607f40b28dd7df"
+            src={details[0].url}
             alt="dicegame"
           />
         </div>
@@ -246,13 +257,8 @@ function ProjectPage() {
               marginBottom: "1.5rem",
             }}
           >
-            <div
-              style={{
-                width: "45%",
-                backgroundColor: "blue",
-                height: "1.25rem",
-              }}
-            ></div>
+            <ProgressBar completed={balance2} />
+
           </div>
           <div
             style={{
@@ -280,7 +286,7 @@ function ProjectPage() {
                   paddingBottom: ".5rem",
                 }}
               >
-                pledged of etherium 6000 goal
+                pledged of etherium  {details[0].goal}
               </p>
             </div>
             <div style={{ padding: ".5 rem" }}>
@@ -317,7 +323,7 @@ function ProjectPage() {
                   color: "black",
                 }}
               >
-                12
+                 {details[0].days}
               </h1>
               <p
                 style={{

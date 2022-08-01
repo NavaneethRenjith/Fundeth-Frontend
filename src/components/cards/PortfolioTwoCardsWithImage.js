@@ -78,7 +78,8 @@ export default ({
       type: "Card game",
       title: "A tabletop roleplaying action game",
       durationText: "90 Days Campaign",
-      locationText: "Seattle"
+      locationText: "Seattle",
+      url:"/projectpage1"
     },
     {
       imageSrc:
@@ -87,7 +88,8 @@ export default ({
       type: "Music Album",
       title: "A music album drenched in '90s retro music",
       durationText: "180 Day Campaign",
-      locationText: "Palo Alto"
+      locationText: "Palo Alto",
+      url:"/projectpage2"
     }
   ];
   return (
@@ -122,7 +124,7 @@ export default ({
                       <LocationIcon /> {card.locationText}
                     </CardMetaFeature>
                   </CardMeta>
-                  <CardAction> <Link to ="/projectpage"> <p>Back this project </p> </Link></CardAction>
+                  <CardAction> <Link to ={card.url}> <p>Back this project </p> </Link></CardAction>
                 </CardText>
               </Card>
             </CardColumn>
