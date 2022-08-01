@@ -141,9 +141,9 @@ export default function App() {
         </Route>
 
         
-        {/* <Route path="/createproject">
+        <Route path="/createproject">
           <CreateProject />
-        </Route> */}
+        </Route>
 
         <Route path="/">
           <AgencyLandingPage />

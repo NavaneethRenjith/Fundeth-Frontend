@@ -54,22 +54,22 @@ export default ({
     {
       question: "What technology is this platform based on ?",
       answer:
-        "Fundeth works with etherum smart contracts under the hood."
+        "Fundeth works with ethereum smart contracts under the hood."
     },
     {
       question: "What happens if a project doesn't reach funding by it's deadline?",
       answer:
-        "The project will not receive funding."
+        "The project won't receive funding and the backers will be refunded."
     },
     {
       question: "How can i view the details of a transaction?",
       answer:
-        "You can use etherscan or other applications to view the blockchain."
+        "You can use etherscan or other applications to view blockchain transactions."
     },
     {
-      question: "How much of the funding money do i get to keep?",
+      question: "What if i feel like a project is not working out like i thought it would?",
       answer:
-        "Almost all of it, we only take a very small cut to keep the platform going!"
+        "At any time, the owner can refund the eth amount they donated! It's that easy! unlike other crowdfunding platforms!"
     }
   ];
 
